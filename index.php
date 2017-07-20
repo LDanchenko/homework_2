@@ -10,35 +10,35 @@ echo $t;
 echo "<p> <b> Задание №2 </b> </p>";
 $arithmetic = "+";
 $b = array(6, 4 , 2);
-task2($b, $arithmetic);
+task2($b, "+");
+echo '<br>';
+task2($b, "-");
+echo '<br>';
+task2($b, "*");
+echo '<br>';
+task2($b, "/");
+echo '<br>';
+task2($b, "%");
+echo '<br>';
+task2($b, "**");
+echo '<br>';
+task2($b, null);
+echo '<br>';
+task2(null, "+");
 echo '<br>';
 
-$arithmetic = "-";
-task2($b, $arithmetic);
+echo "<p> <b> Задание №3 </b> </p>";
+task3("+", 7, 8, 9);
 echo '<br>';
+task3("-", 8, 9);
+echo '<br>';
+task3("*", 7, 8, 9);
+echo '<br>';
+task3("/", 8, 9);
+echo '<br>';
+task3("%", 10, 5, 2);
+echo '<br>';
+task3("**", 10, 9);
 
-$arithmetic = "*";
-task2($b, $arithmetic);
-echo '<br>';
 
-$arithmetic = "/";
-task2($b, $arithmetic);
-echo '<br>';
-
-$arithmetic = "%";
-task2($b, $arithmetic);
-echo '<br>';
-
-$arithmetic = "**";
-task2($b, $arithmetic);
-echo '<br>';
-
-$arithmetic = null;
-task2($b, $arithmetic);
-echo '<br>';
-
-$arithmetic = "+";
-$b = null;
-task2($b, $arithmetic);
-echo '<br>';
 ?>

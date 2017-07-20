@@ -23,12 +23,8 @@ function task2($arr, $str1)
     echo "<br>";
     echo 'Операция ' .$str1;
     echo '<br>';
-    if (empty($arr) or empty($str1)) {
-
+    if (!isset($arr) or !isset($str1)) {
         echo 'Не задана одна переменная!';
-    }
-    elseif (empty($arr) and empty($str1)){
-       // echo 'Не заданы обе переменные!';
     }
     else {
         $b = $arr[0];
@@ -67,6 +63,65 @@ function task2($arr, $str1)
             case ("**"):
                 for ($i = 1; $i < count($arr); $i++) {
                     $b = $b ** $arr[$i];
+                }
+                echo $b;
+                break;
+            default:
+                echo "Нет такой арифметической операции!";
+                break;
+        }
+    }
+}
+
+function task3($str2, ...$arg)
+{
+    $count = func_num_args();
+    echo "<br>";
+    echo 'Аргументы: ';
+    print_r($arg);
+    echo "<br>";
+    echo 'Операция ' .$str2;
+    echo '<br>';
+    if (!isset($arg) or !isset($str2)) {
+        echo 'Не задана одна переменная!';
+    }
+    else {
+        $b = $arg[0];
+        echo 'Результат = ';
+        switch ($str2) {
+            case ("+"):
+                for ($i = 1; $i < $count-1; $i++) {
+                    $b += $arg[$i];
+                }
+                echo $b;
+                break;
+            case ("-"):
+                for ($i = 1; $i < $count-1; $i++) {
+                    $b -= $arg[$i];
+                }
+                echo $b;
+                break;
+            case ("*"):
+                for ($i = 1; $i < $count-1; $i++) {
+                    $b = $b * $arg[$i];
+                }
+                echo $b;
+                break;
+            case ("/"):
+                for ($i = 1; $i < $count-1; $i++) {
+                    $b = $b / $arg[$i];
+                }
+                echo $b;
+                break;
+            case ("%"):
+                for ($i = 1; $i < $count-1; $i++) {
+                    $b = $b % $arg[$i];
+                }
+                echo $b;
+                break;
+            case ("**"):
+                for ($i = 1; $i < $count-1; $i++) {
+                    $b = $b ** $arg[$i];
                 }
                 echo $b;
                 break;
