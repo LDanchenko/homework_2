@@ -132,7 +132,8 @@ function task3($str2, ...$arg)
     }
 }
 
-function task4 ($a, $b){
+function task4($a, $b)
+{
 echo '<br>';
 echo 'Переменная a = '.$a;
 echo '<br>';
@@ -156,6 +157,28 @@ echo '<br>';
     else {
         echo "Неверный формат переменных";
     }
+
+}
+
+function task5($palindrom)
+{
+
+$count = mb_strlen($palindrom);
+echo $count;
+echo '<br>';
+echo '<br>';
+    for ($i = 0; $i < $count; $i++)
+    {
+        echo $palindrom[$i].PHP_EOL ;
+        $tr = false;
+       if ($palindrom[$i]==$palindrom[$count-$i-1])
+        {
+            $tr = true;
+        }
+    }
+
+    if ($tr == true) { echo "true";}
+    if ($tr == false) {echo "false";}
 }
 
 ?>

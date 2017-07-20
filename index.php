@@ -47,4 +47,6 @@ task4(5,4);
 echo '<br>';
 
 echo "<p> <b> Задание №5 </b> </p>";
+task5("laal");
+
 ?>
