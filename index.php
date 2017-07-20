@@ -28,17 +28,23 @@ task2(null, "+");
 echo '<br>';
 
 echo "<p> <b> Задание №3 </b> </p>";
-task3("+", 7, 8, 9);
+task3("+", 7, 8.7, 9);
 echo '<br>';
 task3("-", 8, 9);
 echo '<br>';
-task3("*", 7, 8, 9);
+task3("*", 7.54, 8, 9);
 echo '<br>';
-task3("/", 8, 9);
+task3("/", 80.3, 9);
 echo '<br>';
 task3("%", 10, 5, 2);
 echo '<br>';
 task3("**", 10, 9);
 
+echo "<p> <b> Задание №4 </b> </p>";
+task4("f",3);
+echo '<br>';
+task4(5,4);
+echo '<br>';
 
+echo "<p> <b> Задание №5 </b> </p>";
 ?>

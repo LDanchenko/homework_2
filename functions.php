@@ -132,4 +132,30 @@ function task3($str2, ...$arg)
     }
 }
 
+function task4 ($a, $b){
+echo '<br>';
+echo 'Переменная a = '.$a;
+echo '<br>';
+echo 'Переменная b = '. $b;
+echo '<br>';
+    if (gettype($a)=="integer" and gettype($b)=="integer") {
+        echo "<table>";
+        for ($i = 1; $i <= $a; $i++) {
+            echo '<tr>';
+            for ($j = 1; $j <= $b; $j++) {
+                echo '<td width = 80 align="center" >';
+
+                echo($i * $j);
+
+                echo '</td>';
+            }
+            echo "</tr>";
+        }
+        echo "</<table>";
+    }
+    else {
+        echo "Неверный формат переменных";
+    }
+}
+
 ?>
