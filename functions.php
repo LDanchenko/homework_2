@@ -162,16 +162,18 @@ echo '<br>';
 
 function task5($palindrom)
 {
-
+//сначала $text1 = str_replace(" ","",$text);
+    //https://php.ru/forum/threads/zadacha-na-palindrom.45793/
 $count = mb_strlen($palindrom);
+$palindrom1 = mb_strtolower(iconv("UTF-8", "UTF-8", $palindrom));
 echo $count;
 echo '<br>';
 echo '<br>';
     for ($i = 0; $i < $count; $i++)
     {
-        echo $palindrom[$i].PHP_EOL ;
+        echo $palindrom1[$i].PHP_EOL ;
         $tr = false;
-       if ($palindrom[$i]==$palindrom[$count-$i-1])
+       if ($palindrom1[$i]==$palindrom1[$count-$i-1])
         {
             $tr = true;
         }
