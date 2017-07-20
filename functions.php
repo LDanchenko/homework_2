@@ -176,6 +176,8 @@ echo '<br>';
        if ($palindrom1[$i]==$palindrom1[$count-$i-1])
         {
             $tr = true;
+            echo $tr;
+            echo '<br>';
         }
     }
 
