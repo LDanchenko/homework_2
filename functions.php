@@ -1,5 +1,4 @@
 <?php
-
 function task1($arr, $f)
 {
     if ($f == false) {
@@ -21,12 +20,11 @@ function task2($arr, $str1)
     echo 'Массив: ';
     print_r($arr);
     echo "<br>";
-    echo 'Операция ' .$str1;
+    echo 'Операция ' . $str1;
     echo '<br>';
     if (!isset($arr) or !isset($str1)) {
         echo 'Не задана одна переменная!';
-    }
-    else {
+    } else {
         $b = $arr[0];
         echo 'Результат = ';
         switch ($str1) {
@@ -80,47 +78,46 @@ function task3($str2, ...$arg)
     echo 'Аргументы: ';
     print_r($arg);
     echo "<br>";
-    echo 'Операция ' .$str2;
+    echo 'Операция ' . $str2;
     echo '<br>';
     if (!isset($arg) or !isset($str2)) {
         echo 'Не задана одна переменная!';
-    }
-    else {
+    } else {
         $b = $arg[0];
         echo 'Результат = ';
         switch ($str2) {
             case ("+"):
-                for ($i = 1; $i < $count-1; $i++) {
+                for ($i = 1; $i < $count - 1; $i++) {
                     $b += $arg[$i];
                 }
                 echo $b;
                 break;
             case ("-"):
-                for ($i = 1; $i < $count-1; $i++) {
+                for ($i = 1; $i < $count - 1; $i++) {
                     $b -= $arg[$i];
                 }
                 echo $b;
                 break;
             case ("*"):
-                for ($i = 1; $i < $count-1; $i++) {
+                for ($i = 1; $i < $count - 1; $i++) {
                     $b = $b * $arg[$i];
                 }
                 echo $b;
                 break;
             case ("/"):
-                for ($i = 1; $i < $count-1; $i++) {
+                for ($i = 1; $i < $count - 1; $i++) {
                     $b = $b / $arg[$i];
                 }
                 echo $b;
                 break;
             case ("%"):
-                for ($i = 1; $i < $count-1; $i++) {
+                for ($i = 1; $i < $count - 1; $i++) {
                     $b = $b % $arg[$i];
                 }
                 echo $b;
                 break;
             case ("**"):
-                for ($i = 1; $i < $count-1; $i++) {
+                for ($i = 1; $i < $count - 1; $i++) {
                     $b = $b ** $arg[$i];
                 }
                 echo $b;
@@ -134,12 +131,12 @@ function task3($str2, ...$arg)
 
 function task4($a, $b)
 {
-echo '<br>';
-echo 'Переменная a = '.$a;
-echo '<br>';
-echo 'Переменная b = '. $b;
-echo '<br>';
-    if (gettype($a)=="integer" and gettype($b)=="integer") {
+    echo '<br>';
+    echo 'Переменная a = ' . $a;
+    echo '<br>';
+    echo 'Переменная b = ' . $b;
+    echo '<br>';
+    if (gettype($a) == "integer" and gettype($b) == "integer") {
         echo "<table>";
         for ($i = 1; $i <= $a; $i++) {
             echo '<tr>';
@@ -153,45 +150,46 @@ echo '<br>';
             echo "</tr>";
         }
         echo "</<table>";
-    }
-    else {
+    } else {
         echo "Неверный формат переменных";
     }
 
 }
 
-function task5($palindrom)
+function task5_1($palindrom)
 {
-$text1 = str_replace(" ","",$palindrom);
-    //https://php.ru/forum/threads/zadacha-na-palindrom.45793/
-$count = mb_strlen($text1);
-$palindrom1 = mb_strtolower(iconv("UTF-8", "UTF-8", $text1));
-echo $count;
-echo '<br>';
-echo $palindrom1;
-echo '<br>';
-
-
+    $tr = true;
+    echo "Введенная фраза: " . $palindrom;
     echo '<br>';
-
-    for ($i = 0; $i < $count; $i++)
-    {
-        $k = mb_substr($palindrom1,$i, 1 );
-        echo $k . PHP_EOL;
-        $k1 = mb_substr($palindrom1,$count - $i - 1, 1);
-        echo $k1 . PHP_EOL;
-        echo '<br>';
-        $tr = false;
-      if ($k==$k1)
-        {
-            $tr = true;
+    $text1 = str_replace(" ", "", $palindrom); //убрали пробелы
+    $count = mb_strlen($text1);//считали длинну
+    $palindrom1 = mb_strtolower(iconv("UTF-8", "UTF-8", $text1)); //счделали все буквы маленькими
+    for ($i = 0; $i < $count; $i++) {
+        $k = mb_substr($palindrom1, $i, 1);
+        $k1 = mb_substr($palindrom1, $count - $i - 1, 1);
+        if ($k != $k1) {
+            $tr = false;
+            break;
         }
     }
+return $tr;
+}
+// можно ли во вторую функцию передать результат первой иначе?
+function task5_2($tr){
+    if ($tr) {
+        echo "Результат: фраза палиндром.";
+    } else {
+        echo "Результат: фраза не палиндром.";
+    }
+    echo '<br>';
+}
 
-   if ($tr == true) { echo "true";}
-    if ($tr == false) {echo "false";}
+function task6 (){
+    echo 'Текущая дата и время: ' .date("d.m.Y H:i");
+    echo '<br>';
+   echo 'Unix time: ' .date("d.m.Y H:i:s", mktime(0, 0, 0, 02, 24, 2016));
+}
 
-  }
 
 
 ?>

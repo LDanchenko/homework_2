@@ -47,8 +47,18 @@ task4(5,4);
 echo '<br>';
 
 echo "<p> <b> Задание №5 </b> </p>";
-task5("люба аб");
+echo '<br>';
+task5_2(task5_1("lalп пlal"));
+echo '<br>';
+task5_2(task5_1("lal lal"));
+echo '<br>';
 
+echo "<p> <b> Задание №6 </b> </p>";
+echo '<br>';
+task6();
+
+echo "<p> <b> Задание №7 </b> </p>";
+echo '<br>';
 
 
 ?>
