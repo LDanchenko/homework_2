@@ -136,6 +136,7 @@ function task4($a, $b)
     echo '<br>';
     echo 'Переменная b = ' . $b;
     echo '<br>';
+
     if (gettype($a) == "integer" and gettype($b) == "integer") {
         echo "<table>";
         for ($i = 1; $i <= $a; $i++) {
@@ -237,9 +238,19 @@ echo '                                                     ..::\'\'\'\'::..
 `:,,,,;;\' ,;; ,;;, ;;, ,;;, ,;;, `:,,,,:\'   :;:    `;..``::::\'\'..;\'
                                                      ``::,,,,::\'\'
 ';
+echo '</pre>';
 }
 
+function task9(){
+$text = file_get_contents('./test.txt');
+return $text;
+}
 
-
+function task10(){
+    $text = "Hello again!";
+    $fp = fopen("anothertest.txt", "w");
+    fwrite($fp, $text);
+    fclose($fp);
+}
 
 ?>
