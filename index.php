@@ -71,4 +71,13 @@ echo  '<br>';
 $str = 'RX packets:950381 errors:0 dropped:0 overruns:0 frame:0 :)';
 echo 'Строка: ' .$str;
 task8($str);
+
+echo "<p> <b> Задание №9 </b> </p>";
+echo '<br>';
+$text = task9();
+echo ''. $text;
+
+echo "<p> <b> Задание №10 </b> </p>";
+echo '<br>';
+task10();
 ?>
