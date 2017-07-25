@@ -4,12 +4,12 @@ require "functions.php";
 echo "<p> <b> Задание №1 </b> </p>";
 $a = false;
 $mas = array("foo", "bar", "hallo", "world");
-$t = task1($mas, $a);
-echo $t;
+$arr = task1($mas, $a);
+echo $arr;
 
 echo "<p> <b> Задание №2 </b> </p>";
 $arithmetic = "+";
-$b = array(6, 4 , 2);
+$b = array(6, 4, 2);
 task2($b, "+");
 echo '<br>';
 task2($b, "-");
@@ -41,16 +41,16 @@ echo '<br>';
 task3("**", 10, 9);
 
 echo "<p> <b> Задание №4 </b> </p>";
-task4("f",3);
+task4("f", 3);
 echo '<br>';
-task4(5,4);
+task4(5, 4);
 echo '<br>';
 
 echo "<p> <b> Задание №5 </b> </p>";
 echo '<br>';
-task5_2(task5_1("lalп пlal"));
+task5_2(task5_1("А роза упала на лапу Азора"));
 echo '<br>';
-task5_2(task5_1("lal lal"));
+task5_2(task5_1("Язык Php"));
 echo '<br>';
 
 echo "<p> <b> Задание №6 </b> </p>";
@@ -65,17 +65,17 @@ task7('Карл у Клары украл Кораллы', "Две бутылки
 echo "<p> <b> Задание №8 </b> </p>";
 echo '<br>';
 $str = 'RX packets:950381 errors:0 dropped:0 overruns:0 frame:0.';
-echo 'Строка: ' .$str;
+echo 'Строка: ' . $str;
 task8($str);
-echo  '<br>';
+echo '<br>';
 $str = 'RX packets:950381 errors:0 dropped:0 overruns:0 frame:0 :)';
-echo 'Строка: ' .$str;
+echo 'Строка: ' . $str;
 task8($str);
 
 echo "<p> <b> Задание №9 </b> </p>";
 echo '<br>';
 $text = task9();
-echo ''. $text;
+echo '' . $text;
 
 echo "<p> <b> Задание №10 </b> </p>";
 echo '<br>';
