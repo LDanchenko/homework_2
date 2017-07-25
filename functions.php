@@ -190,6 +190,56 @@ function task6 (){
    echo 'Unix time: ' .date("d.m.Y H:i:s", mktime(0, 0, 0, 02, 24, 2016));
 }
 
+function task7($strok, $strok1){
+    echo 'Строка: ' .$strok;
+    echo '<br>';
+    $search = "К";
+    $replace   = "";
+    $output  = 'Результат удаления К:' .str_replace($search, $replace, $strok);
+    echo $output;
+    echo '<br>';
+    echo 'Строка: ' .$strok1;
+    echo '<br>';
+    $search = "Две";
+    $replace   = "Три";
+    $output  = 'Результат замены:' .str_replace($search, $replace, $strok1);
+    echo $output;
+}
+
+
+
+function task8($packeges){
+
+   $pattern = array ('|[A-Z]|','|[a-z]|', '|:|', '|\s0|', '|\.|', '|\s|');
+    $replacement = '';
+    $result = preg_replace($pattern, $replacement, $packeges);
+    echo '<br>';
+    $pattern = '|:\)|';
+    $res = preg_match($pattern, $packeges);
+     if ($res ==1){
+           smile();
+       }
+       else {
+           if ($result > 1000) {echo 'Сеть есть';}
+           echo  '<br>';
+       }
+
+}
+function smile(){
+    echo '<pre>';
+echo '                                                     ..::\'\'\'\'::..
+                                           .:::.   .;\'\'        ``;.
+   ....                                    :::::  ::    ::  ::    ::
+ ,;\' .;:                ()  ..:            `:::\' ::     ::  ::     ::
+ ::.      ..:,:;.,:;.    .   ::   .::::.    `:\'  :: .:\' ::  :: `:. ::
+  \'\'\'::,   ::  ::  ::  `::   ::  ;:   .::    :   ::  :          :  ::
+,:\';  ::;  ::  ::  ::   ::   ::  ::,::\'\'.    .    :: `:.      .:\' ::
+`:,,,,;;\' ,;; ,;;, ;;, ,;;, ,;;, `:,,,,:\'   :;:    `;..``::::\'\'..;\'
+                                                     ``::,,,,::\'\'
+';
+}
+
+
 
 
 ?>

@@ -59,6 +59,16 @@ task6();
 
 echo "<p> <b> Задание №7 </b> </p>";
 echo '<br>';
+task7('Карл у Клары украл Кораллы', "Две бутылки лимонада");
 
 
+echo "<p> <b> Задание №8 </b> </p>";
+echo '<br>';
+$str = 'RX packets:950381 errors:0 dropped:0 overruns:0 frame:0.';
+echo 'Строка: ' .$str;
+task8($str);
+echo  '<br>';
+$str = 'RX packets:950381 errors:0 dropped:0 overruns:0 frame:0 :)';
+echo 'Строка: ' .$str;
+task8($str);
 ?>
