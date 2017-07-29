@@ -1,16 +1,27 @@
 <?php
-function task1($arr, $bool)
+function task1($arr, $bool = false)
 {
     if ($bool == false) {
         $str = '';
         for ($i = 0; $i <= count($arr); $i++) {
-            $str = $str . '<p>' . $arr[$i] . '</p>';
+            echo '<p>' . $arr[$i] . '</p>';
         }
     }
     if ($bool == true) {
         $str = implode(",", $arr); //обьедили массив в строку через запятую
     }
     return $str;
+}
+
+function is_numeric_array($arr)
+{
+    $bool = true;
+    foreach ($arr as $value) {
+        if (!is_numeric($value)) {
+            $bool = false;
+        }
+    }
+    return $bool;
 }
 
 function task2($arr, $str)
@@ -23,7 +34,7 @@ function task2($arr, $str)
     echo '<br>';
     if (!isset($arr) or !isset($str)) {
         echo 'Не задана одна переменная!';
-    } else {
+    } elseif (is_numeric_array($arr) == true) {
         $b = $arr[0];
         echo 'Результат = ';
         switch ($str) {
@@ -67,21 +78,26 @@ function task2($arr, $str)
                 echo "Нет такой арифметической операции!";
                 break;
         }
+    } else {
+        echo 'В массиве не только цифры!';
     }
 }
+
 
 function task3($str, ...$arg)
 {
     $count = func_num_args();
     echo "<br>";
+    echo $count;
+    echo '<br>';
     echo 'Аргументы: ';
     print_r($arg);
     echo "<br>";
     echo 'Операция ' . $str;
     echo '<br>';
-    if (!isset($arg) or !isset($str)) {
+    if (func_get_arg(1) == null  or !isset($str)) {
         echo 'Не задана одна переменная!';
-    } else {
+    } elseif (is_numeric_array($arg) == true) {
         $b = $arg[0];
         echo 'Результат = ';
         switch ($str) {
@@ -126,6 +142,9 @@ function task3($str, ...$arg)
                 break;
         }
     }
+    else {
+            echo 'Среди переменных не только цифры!';
+        }
 }
 
 function task4($a, $b)
@@ -141,15 +160,11 @@ function task4($a, $b)
         for ($i = 1; $i <= $a; $i++) {
             echo '<tr>';
             for ($j = 1; $j <= $b; $j++) {
-                echo '<td width = 80 align="center" >';
-
-                echo($i * $j);
-
-                echo '</td>';
+                echo '<td width = 80 align="center" >' . $i * $j . '</td>';
             }
             echo "</tr>";
         }
-        echo "</<table>";
+        echo "</table>";
     } else {
         echo "Неверный формат переменных";
     }

@@ -2,14 +2,15 @@
 require "functions.php";
 
 echo "<p> <b> Задание №1 </b> </p>";
-$a = false;
 $mas = array("foo", "bar", "hallo", "world");
-$arr = task1($mas, $a);
+$arr = task1($mas);
+echo '<br>';
+$arr = task1($mas, true);
 echo $arr;
 
 echo "<p> <b> Задание №2 </b> </p>";
 $arithmetic = "+";
-$b = array(6, 4, 2);
+$b = array(6, 7, 2);
 task2($b, "+");
 echo '<br>';
 task2($b, "-");
@@ -22,9 +23,14 @@ task2($b, "%");
 echo '<br>';
 task2($b, "**");
 echo '<br>';
+$g = array(6, 'j', 2);
+task2($g, "**");
+echo '<br>';
 task2($b, null);
 echo '<br>';
 task2(null, "+");
+echo '<br>';
+task2($b, "h");
 echo '<br>';
 
 echo "<p> <b> Задание №3 </b> </p>";
@@ -39,6 +45,12 @@ echo '<br>';
 task3("%", 10, 5, 2);
 echo '<br>';
 task3("**", 10, 9);
+echo '<br>';
+task3(null, 10, 9);
+echo '<br>';
+task3("**", null);
+echo '<br>';
+task3("**", 10, 'f');
 
 echo "<p> <b> Задание №4 </b> </p>";
 task4("f", 3);
