@@ -155,7 +155,7 @@ function task4($a, $b)
     echo 'Переменная b = ' . $b;
     echo '<br>';
 
-    if (gettype($a) == "integer" and gettype($b) == "integer") {
+    if (is_integer($a) and is_integer($b) == "integer") {
         echo "<table>";
         for ($i = 1; $i <= $a; $i++) {
             echo '<tr>';
@@ -226,20 +226,20 @@ function task7($str1, $str2)
 
 function task8($packeges)
 {
-    $pattern = array('|[A-Z]|', '|[a-z]|', '|:|', '|\s0|', '|\.|', '|\s|');
-    $replacement = '';
-    $result = preg_replace($pattern, $replacement, $packeges);
-    echo '<br>';
-    $pattern = '|:\)|';
-    $res = preg_match($pattern, $packeges);
-    if ($res == 1) {
-        smile();
-    } else {
-        if ($result > 1000) {
-            echo 'Сеть есть';
-        }
-        echo '<br>';
-    }
+    preg_match('/\d{6}\s/',$packeges,$found);        // Производим поиск
+    $r = $found[0];
+echo '<br>';
+       $pattern = '|:\)|';
+       $res = preg_match($pattern, $packeges);
+       if ($res == 1) {
+           smile();
+       } else {
+           if ($r > 1000) {
+               echo 'Сеть есть';
+           }
+           echo '<br>';
+       }
+
 }
 
 function smile()
