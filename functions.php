@@ -1,13 +1,13 @@
 <?php
 function task1($arr, $bool = false)
 {
-    if ($bool == false) {
+    if (!$bool) {
         $str = '';
-        for ($i = 0; $i <= count($arr); $i++) {
+        for ($i = 0; $i < count($arr); $i++) {
             echo '<p>' . $arr[$i] . '</p>';
         }
     }
-    if ($bool == true) {
+    else {
         $str = implode(",", $arr); //обьедили массив в строку через запятую
     }
     return $str;
@@ -95,7 +95,7 @@ function task3($str, ...$arg)
     echo "<br>";
     echo 'Операция ' . $str;
     echo '<br>';
-    if (func_get_arg(1) == null  or !isset($str)) {
+    if (func_get_arg(1) == null or !isset($str)) {
         echo 'Не задана одна переменная!';
     } elseif (is_numeric_array($arg) == true) {
         $b = $arg[0];
@@ -141,10 +141,9 @@ function task3($str, ...$arg)
                 echo "Нет такой арифметической операции!";
                 break;
         }
+    } else {
+        echo 'Среди переменных не только цифры!';
     }
-    else {
-            echo 'Среди переменных не только цифры!';
-        }
 }
 
 function task4($a, $b)
@@ -226,19 +225,19 @@ function task7($str1, $str2)
 
 function task8($packeges)
 {
-    preg_match('/\d{6}\s/',$packeges,$found);        // Производим поиск
+    preg_match('/\d{6}\s/', $packeges, $found);        // Производим поиск
     $r = $found[0];
-echo '<br>';
-       $pattern = '|:\)|';
-       $res = preg_match($pattern, $packeges);
-       if ($res == 1) {
-           smile();
-       } else {
-           if ($r > 1000) {
-               echo 'Сеть есть';
-           }
-           echo '<br>';
-       }
+    echo '<br>';
+    $pattern = '|:\)|';
+    $res = preg_match($pattern, $packeges);
+    if ($res == 1) {
+        smile();
+    } else {
+        if ($r > 1000) {
+            echo 'Сеть есть';
+        }
+        echo '<br>';
+    }
 
 }
 
