@@ -228,17 +228,16 @@ function task8($packeges)
     preg_match('/\d{6}\s/', $packeges, $found);        // Производим поиск
     $r = $found[0];
     echo '<br>';
-    $pattern = '|:\)|';
-    $res = preg_match($pattern, $packeges);
-    if ($res == 1) {
+
+    if(stristr($packeges, ':)') == TRUE) { //поиск в строке
         smile();
-    } else {
+    }
+    else {
         if ($r > 1000) {
             echo 'Сеть есть';
         }
         echo '<br>';
     }
-
 }
 
 function smile()
